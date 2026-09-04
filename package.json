@@ -1,0 +1,53 @@
+{
+    "name": "@badlopo/vite-plugin-git-clean",
+    "version": "0.1.0",
+    "description": "Prevents a Vite production build when the current Git worktree is dirty.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/badlopo/vite-plugin-git-clean.git"
+    },
+    "homepage": "https://github.com/badlopo/vite-plugin-git-clean#readme",
+    "bugs": {
+        "url": "https://github.com/badlopo/vite-plugin-git-clean/issues"
+    },
+    "type": "module",
+    "sideEffects": false,
+    "types": "./dist/index.d.mts",
+    "keywords": [
+        "git",
+        "vite",
+        "vite-plugin",
+        "build"
+    ],
+    "exports": {
+        ".": "./dist/index.mjs",
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "build": "tsdown",
+        "dev": "tsdown --watch",
+        "typecheck": "tsc --noEmit",
+        "prepack": "npm run build"
+    },
+    "peerDependencies": {
+        "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^26.4.1",
+        "tsdown": "^0.22.5",
+        "typescript": "^7.0.2",
+        "vite": "^8.2.2"
+    }
+}
